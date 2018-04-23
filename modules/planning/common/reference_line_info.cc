@@ -178,6 +178,10 @@ const ReferenceLine& ReferenceLineInfo::reference_line() const {
   return reference_line_;
 }
 
+const common::VehicleState& ReferenceLineInfo::vehicle_state() const {
+  return vehicle_state_;
+}
+
 void ReferenceLineInfo::SetTrajectory(const DiscretizedTrajectory& trajectory) {
   discretized_trajectory_ = trajectory;
 }

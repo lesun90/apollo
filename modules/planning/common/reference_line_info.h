@@ -66,6 +66,7 @@ class ReferenceLineInfo {
   PathDecision* path_decision();
   const PathDecision& path_decision() const;
   const ReferenceLine& reference_line() const;
+  const common::VehicleState& vehicle_state() const;
   const common::TrajectoryPoint& AdcPlanningPoint() const;
 
   bool ReachedDestination() const;

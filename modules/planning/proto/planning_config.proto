@@ -32,6 +32,7 @@ message PlanningConfig {
     RTK = 0;
     EM = 1;  // expectation maximization
     LATTICE = 2;
+    DPLANNER = 3;
   };
   optional PlannerType planner_type = 1 [default = EM];
 

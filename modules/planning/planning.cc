@@ -32,6 +32,7 @@
 #include "modules/planning/planner/em/em_planner.h"
 #include "modules/planning/planner/lattice/lattice_planner.h"
 #include "modules/planning/planner/rtk/rtk_replay_planner.h"
+#include "modules/planning/planner/DPlanner/DPlanner.h"
 #include "modules/planning/reference_line/reference_line_provider.h"
 #include "modules/planning/tasks/traffic_decider/traffic_decider.h"
 
@@ -65,6 +66,8 @@ void Planning::RegisterPlanners() {
                             []() -> Planner* { return new EMPlanner(); });
   planner_factory_.Register(PlanningConfig::LATTICE,
                             []() -> Planner* { return new LatticePlanner(); });
+  planner_factory_.Register(PlanningConfig::DPLANNER,
+                            []() -> Planner* { return new DPlanner(); });
 }
 
 Status Planning::InitFrame(const uint32_t sequence_num,
